@@ -1,0 +1,86 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceGroup":{
+            "value": "benrobertson-rg"
+        },
+        "location": {
+            "value": "australiacentral"
+        },
+        "networkInterfaceName": {
+            "value": "br-test976"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "networkSecurityGroupName": {
+            "value": "br-test-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/de8aa4b1-87d7-41be-ada7-5e2e4b4768e5/resourceGroups/benrobertson-rg/providers/Microsoft.Network/virtualNetworks/benrobertson-vnet"
+        },
+        "publicIpAddressName": {
+            "value": "br-test-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Standard"
+        },
+        "pipDeleteOption": {
+            "value": "Detach"
+        },
+        "virtualMachineName": {
+            "value": "br-test"
+        },
+        "virtualMachineComputerName": {
+            "value": "br-test"
+        },
+        "virtualMachineRG": {
+            "value": "benrobertson-rg"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
+        },
+        "adminUsername": {
+            "value": "azureuser"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCs6c2j2rrfKJm245fKLcauLpHJbqztuyibAuV0S3qS7MB9Kq2JtKkoLW5pdFOPpyN6mhHp7dZ/gjyP6EInmAWnJGEGolixWcs2O0oR/JAVdlz7esxzgB06aFPc1tdK5v0BIuVJFeXZ3RRXO4ImUT0teitlqDZb7KytQ/HjstxTrLNIJlAmTeglELUwAMvCouYK8ITPv/O7k5V9nUkD28dSOalrNdO00U+sFrPUkS0uOKFd8KPsvPErQUMyGl0BxXkQa5+rcPnJhgFdEl1VHP8GerCFJWE/hR53YHeJ2t+xfrO2CHvL2X1R6GvzUK/oFc7IwVQ0d8KAfbXat7xsXP/ZUdrrVf7dlFd8EEjFfgT1jVH2T5y9eZn4nRg182dVn1Gl9X6CgKmJhFY0aS+eQQnMEb4MQl+CdkDR1BPNy6N+PEkK/ULtc/tTYDsa6N/nQ7TDXudQPqPY3XNVnbWjNT64Gi40FDyyikSImR08cbSXT5qC2YBWWT3/BuyAG3xBAes= benjamin@Benjamins-MacBook-Pro.local"
+        },
+        "customData": {
+            "value": "IyEvYmluL2Jhc2gKY3VybCAtayBodHRwczovL2JyLXBlMjAxOS12bS50c3V1MWV5MHgyZWU1Y3hkMjAwMTFpNXpxaC5jYnJ4LmludGVybmFsLmNsb3VkYXBwLm5ldDo4MTQwL3BhY2thZ2VzL2N1cnJlbnQvaW5zdGFsbC5iYXNoIHwgc3VkbyBiYXNoCg=="
+        }
+    }
+}
